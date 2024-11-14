@@ -1,0 +1,104 @@
+.slick-next {
+    right: 0px;
+    /* background-color: #1a466e !important; */
+    border-radius: 50%;
+}
+.slick-next:before{
+    color: #7353ffab; 
+}
+.slick-prev:before{
+    color: #7353ffab; 
+}
+.slick-prev{
+    left: 0px;
+    z-index: 1;
+}
+.poppins {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.btncolor{
+    background-color: #1a466e !important;
+}
+.specialbanner-data {
+    bottom: 20px;
+    left: 6%;
+    right: 6%;
+    padding: 20px 20px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.9s ease;
+}
+.day312 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.4px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #eee;
+    color: #232323;
+    position: relative;
+    display: block;
+    text-align: center;
+    transition: all 0.5s;
+}
+.trendy-collection-img:hover{
+    transform: scale(1.04);
+    transition: all 3s ease 0s !important;
+}
+.img-hover-scale:hover{
+    cursor: pointer;
+    transition: 0.5s;
+    transform: scale(1.05);
+
+}
+.icon-hover-blue:hover{
+    color: #1a466e;
+    transition: 0.5s all;
+}
+.breadcrumb-container {
+    margin-bottom: 30px;
+    background: url(./Images/Fashionpage_header_img.png) no-repeat;
+    background-attachment: fixed;
+}
+@media (max-width: 768px){
+    .btncolor {
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .bg-light {
+        flex-direction: column; /* Stack input and button vertically on smaller screens */
+    }
+
+    .bg-light input {
+        margin-bottom: 0.5rem; /* Add space below input field */
+    }
+    .set-trendy-box{
+        right: 64% !important;
+    }
+    .md-absolute-none{
+        display: none !important;
+    }
+    .md-justify-end-none{
+        display: flex !important;
+        justify-content: flex-start !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .bg-light {
+        flex-direction: row; /* Align input and button side by side on larger screens */
+    }
+
+    .bg-light input {
+        margin-bottom: 0; /* Reset margin for larger screens */
+    }
+}
+

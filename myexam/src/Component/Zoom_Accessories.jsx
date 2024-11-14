@@ -1,0 +1,228 @@
+import React from 'react'
+import { Home } from '@mui/icons-material';
+import Zoom_Header from './Zoom_Header';
+import Zoom_Footer from './Zoom_Footer';
+import { Link} from 'react-router-dom';
+
+// images
+import fashion_img1 from '../Images/fashion_img1.jpg';
+import fashion_img2 from '../Images/fashion_img2.jpg';
+import fashion_img3 from '../Images/fashion_img3.jpg';
+import fashion_img4 from '../Images/fashion_img_4.jpg';
+import fashion_img5 from '../Images/fashion_img_5.jpg';
+import fashion_img6 from '../Images/fashion_img_6.jpg';
+import fashion_img7 from '../Images/fashion_img_7.jpg';
+import fashion_img8 from '../Images/fashion_img_8.jpg';
+import fashion_img9 from '../Images/fashion_img_9.jpg';
+
+// icons
+import { FilterList } from '@mui/icons-material/esm/index.js';
+import Grid from '@mui/icons-material/ViewCompact';
+
+// ratting
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+
+const Zoom_Accessories = () => {
+    const products = [
+        { name: "iMac", price: "$122.00", image: fashion_img6 },
+        { name: "Canon EOS 5D", price: "$122.00", image: fashion_img5 },
+        { name: "Samsung SyncMaster 941BW", price: "$242.00", image: fashion_img8 },
+        { name: "HTC Touch HD", price: "$122.00", image: fashion_img7 }
+    ];
+    const products1 = [
+        { id: 1, name: "Apple Cinema 30\"", price: "$122.00", image: fashion_img4, rating: 0 },
+        { id: 2, name: "Canon EOS 5D", price: "$122.00", image: fashion_img5, rating: 0 },
+        { id: 3, name: "HP LP3065", price: "$122.00", image: fashion_img6, rating: 0 },
+        { id: 4, name: "HTC Touch HD", price: "$122.00", image: fashion_img7, rating: 3 },
+        { id: 5, name: "iPod Classic", price: "$122.00", image: fashion_img8, rating: 0 },
+        { id: 6, name: "iPod Shuffle", price: "$44.00", oldPrice: "$122.00", image: fashion_img9, rating: 0 }
+    ];
+    const ProductCard = ({ product }) => (
+        <div className="p-3">
+            <div className='border border-2 mb-2 pt-3'>
+                <img src={product.image} alt={product.name} className="img-fluid mb-3 " style={{ height: '200px', objectFit: 'cover' }} />
+                <Stack spacing={1} className='mb-2'>
+                    <Rating name="half-rating" defaultValue={5} className='m-auto' />
+                </Stack>
+            </div>
+            <h3 className="text-center h6 fw-semibold mb-2">{product.name}</h3>
+            <p className="text-center text-secondary mb-2">
+                {product.oldPrice && <span className="text-decoration-line-through me-2">{product.oldPrice}</span>}
+                {product.price}
+            </p>
+        </div>
+    );
+    return (
+        <div>
+            <div className="">
+                <Zoom_Header />
+            </div>
+            <div className="container-fluid">
+                <div className="breadcrumb-container" style={{ height: '140px' }}>
+                    <div className="py-5 text-center d-flex align-items-center justify-content-center">
+                        <ul className='list-unstyled d-flex align-items-center justify-content-center'>
+                            <li><Home /></li>
+                            <li className="ms-2 text-black">| Accessories</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-lg-3 col-md-6 col-sm-12">
+                        <div className="border border-secondary w-100" style={{ maxWidth: '400px' }}>
+                            <div className="p-3" style={{ backgroundColor: "#eee" }}>
+                                <h2 className="fw-semibold h5 mb-0">CATEGORIES</h2>
+                            </div>
+                            <div className="px-4">
+                                <ul className="mt-2 list-unstyled d-flex flex-column">
+                                    <Link to='/fashion-page' className="text-decoration-none text-black">
+                                        Fashion (9) <i className=""></i>
+                                        <ul className="ms-3 mt-1 list-unstyled">
+                                            <li>- Shoes (3)</li>
+                                            <li>- Tops (5)</li>
+                                            <li>- Dresses (3)</li>
+                                        </ul>
+                                    </Link>
+                                    <Link to='/accessories-page' className="text-decoration-none text-black mt-2">Accessories (7)</Link>
+                                    <Link to='/catagory-page' className="text-decoration-none text-black mt-2">Category (8)</Link>
+                                    <Link to='/collection-page' className="text-decoration-none text-black mt-2">Collection (2)</Link>
+                                    <Link to='/outfits-page' className="text-decoration-none text-black mt-2">Outfits (7)</Link>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-9 col-md-6-col-sm-12">
+                        <div className="">
+                            <p className="mb-0 h3 fw-bold mb-2">Accessories</p>
+                            <div className="row g-4 ">
+                                <div className="col-12 col-md-4 text-center">
+                                    <a href="">
+                                        <img src={fashion_img8} alt="Black wristwatch with a black strap" className="img-fluid mb-2 border w-75 h-75" />
+                                    </a>
+                                    <p className="text-muted">Googles (3)</p>
+                                </div>
+                                <div className="col-12 col-md-4 text-center">
+                                    <a href="">
+                                        <img src={fashion_img5} alt="Plain white t-shirt" className="img-fluid mb-2 border w-75 h-75" />
+                                    </a>
+                                    <p className="text-muted">Wallet (4)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-3 col-md-6 col-sm-12">
+                        <div className="border border-secondary w-100" style={{ maxWidth: '300px' }}>
+                            <h2 className="h5 mb-4 p-4" style={{ backgroundColor: "#eee" }}>REFINE SEARCH</h2>
+                            <div className="px-4 pb-3">
+                                <div className="mb-4">
+                                    <h3 className="h6 fw-semibold mb-2">Colour</h3>
+                                    <div className="form-check mb-2" style={{ color: "#666" }}>
+                                        <input type="checkbox" id="red" className="form-check-input" />
+                                        <label htmlFor="red" className="form-check-label">Red (4)</label>
+                                    </div>
+                                    <div className="form-check mb-2" style={{ color: "#666" }}>
+                                        <input type="checkbox" id="yellow" className="form-check-input" />
+                                        <label htmlFor="yellow" className="form-check-label">Yellow (4)</label>
+                                    </div>
+                                </div>
+                                <div className="mb-4">
+                                    <h3 className="h6 fw-semibold mb-2">Price</h3>
+                                    <div className="form-check mb-2" style={{ color: "#666" }}>
+                                        <input type="checkbox" id="price1" className="form-check-input" />
+                                        <label htmlFor="price1" className="form-check-label">$11.00 - $14.00 (4)</label>
+                                    </div>
+                                    <div className="form-check mb-2" style={{ color: "#666" }}>
+                                        <input type="checkbox" id="price2" className="form-check-input" />
+                                        <label htmlFor="price2" className="form-check-label">$8.00 - $10.00 (4)</label>
+                                    </div>
+                                </div>
+                                <div className="mb-4">
+                                    <h3 className="h6 fw-semibold mb-2">Size</h3>
+                                    <div className="form-check mb-2" style={{ color: "#666" }}>
+                                        <input type="checkbox" id="sizeS" className="form-check-input" />
+                                        <label htmlFor="sizeS" className="form-check-label">S (3)</label>
+                                    </div>
+                                    <div className="form-check mb-2" style={{ color: "#666" }}>
+                                        <input type="checkbox" id="sizeM" className="form-check-input" />
+                                        <label htmlFor="sizeM" className="form-check-label">M (0)</label>
+                                    </div>
+                                    <div className="form-check mb-2" style={{ color: "#666" }}>
+                                        <input type="checkbox" id="sizeL" className="form-check-input" />
+                                        <label htmlFor="sizeL" className="form-check-label">L (0)</label>
+                                    </div>
+                                    <div className="form-check mb-2" style={{ color: "#666" }}>
+                                        <input type="checkbox" id="sizeXL" className="form-check-input" />
+                                        <label htmlFor="sizeXL" className="form-check-label">XL (0)</label>
+                                    </div>
+                                </div>
+                                <Link to="/accessories-page" className='text-decoration-none btn btncolor text-white'>
+                                    <i className='me-2'><FilterList /></i>Refine
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* second box */}
+                        <div className="container max-w-xs p-0 my-4 border border-secondary">
+                            <h2 className="h5 p-4 mb-4" style={{ backgroundColor: "#eee" }}>Latest</h2>
+                            <div className="px-4">
+                                {products.map((product, index) => (
+                                    <div key={index} className="d-flex align-items-center mb-4">
+                                        <img src={product.image} alt={product.name} className="img-fluid border p-1 me-3" style={{ width: '64px', height: '64px' }} />
+                                        <div>
+                                            <div className="small fw-semibold">{product.name}</div>
+                                            <div className="small">{product.price}</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-9 col-md-6 col-sm-12">
+                        <div className="container my-4">
+                            <div className="d-flex justify-content-between align-items-center mb-4 py-2 px-3" style={{ backgroundColor: "#eee" }}>
+                                <div className="d-flex align-items-center mb-2">
+                                    <i className="text-secondary me-2"><Grid /></i>
+                                    <span>Product Compare (0)</span>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                    <div className="me-4 d-flex">
+                                        <span style={{ fontSize: "11px" }}>Sort By:</span>
+                                        <select className="form-select form-select-sm ms-2 bg-transparent border-secondary">
+                                            <option>Default</option>
+                                        </select>
+                                    </div>
+                                    <div className='d-flex'>
+                                        <span>Show:</span>
+                                        <select className="form-select form-select-sm ms-2 bg-transparent border-secondary">
+                                            <option>10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                {products1.map(product => (
+                                    <div key={product.id} className="col-lg-4 col-sm-12 col-md-6 text-center">
+                                        <ProductCard product={product} />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="p-3" style={{backgroundColor:"#eee"}}>
+                            <p className="text-secondary m-0">Showing 1 to 6 of 6 (1 Pages)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container-fluid">
+                <Zoom_Footer />
+            </div>
+        </div>
+    )
+}
+
+export default Zoom_Accessories
